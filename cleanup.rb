@@ -10,15 +10,15 @@ CYCLE = 10 * 60
 # Telling your shop who's boss.
 ShopifyAPI::Base.site = "http://#{APIKEY}:#{PASSWORD}@#{SHOPNAME}.myshopify.com/admin"
 
-# Initializing.
-start_time = Time.now
-
 # How many.
 product_count = ShopifyAPI::Product.count
 nb_pages      = (product_count / 250.0).ceil
 
 # Do we actually have any work to do?
 puts "Yo man. You don't have any product in your shop. duh!" if product_count.zero?
+
+# Initializing.
+start_time = Time.now
 
 # While we still have products.
 1.upto(nb_pages) do |page|
