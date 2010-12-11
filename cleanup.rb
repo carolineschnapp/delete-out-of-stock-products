@@ -28,7 +28,7 @@ start_time = Time.now
     puts "The time is now #{stop_time.strftime('%I:%M%p')}"
     processing_duration = stop_time - start_time
     puts "The processing lasted #{processing_duration.to_i} seconds."
-    wait_time = CYCLE - processing_duration
+    wait_time = (CYCLE - processing_duration).ceil
     puts "We have to wait #{wait_time.to_i} seconds then we will resume."
     sleep wait_time
     start_time = Time.now
