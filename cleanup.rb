@@ -1,14 +1,15 @@
 require 'rubygems'
 require 'shopify_api'
 
-APIKEY = 'APIKEY'
+APIKEY   = 'APIKEY'
 PASSWORD = 'PASSWORD'
 SHOPNAME = 'shopname'
 
 CYCLE = 10 * 60
 
 # Telling your shop who's boss.
-ShopifyAPI::Base.site = "http://#{APIKEY}:#{PASSWORD}@#{SHOPNAME}.myshopify.com/admin"
+url = "https://#{APIKEY}:#{PASSWORD}@#{SHOPNAME}.myshopify.com/admin"
+ShopifyAPI::Base.site = url
 
 # How many.
 product_count = ShopifyAPI::Product.count
