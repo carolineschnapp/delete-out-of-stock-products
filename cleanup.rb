@@ -1,11 +1,11 @@
-require 'rubygems'
-require 'shopify_api'
+require 'rubygems'    # Need this to use the shopify_api gem.
+require 'shopify_api' # Tellement utile to speak to your shop.
 
 APIKEY   = 'APIKEY'
 PASSWORD = 'PASSWORD'
 SHOPNAME = 'shopname'
 
-CYCLE = 10 * 60
+CYCLE = 0.5     # You can average 2 calls per second, so each call ought to take a half second minimum.
 
 # Telling your shop who's boss.
 url = "https://#{APIKEY}:#{PASSWORD}@#{SHOPNAME}.myshopify.com/admin"
